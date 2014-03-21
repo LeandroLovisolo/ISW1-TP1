@@ -16,4 +16,4 @@ Nahuel Delgado (LU 601/11) [nahueldelgado@gmail.com](mailto:nahueldelgado@gmail.
 Gastón Guillermo (LU 400/11) [grequeni@hotmail.com](mailto:grequeni@hotmail.com)  
 Leandro Lovisolo (LU 645/11) [leandro@leandro.me](mailto:leandro@leandro.me)  
 Lautaro José Petaccio  (LU 443/11) [lausuper@gmail.com](mailto:lausuper@gmail.com)  
-Sebastián Vita (LU 149/11) [](mailto:)
+Sebastián Vita (LU 149/11) [sebastian_vita@yahoo.com.ar](mailto:sebastian_vita@yahoo.com.ar)
