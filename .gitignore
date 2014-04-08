@@ -1,0 +1,6 @@
+# Output de LaTeX
+*.aux
+*.log
+*.out
+*.toc
+tex/*.pdf

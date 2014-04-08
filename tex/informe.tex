@@ -1,0 +1,292 @@
+\documentclass[a4paper, 10pt, twoside]{article}
+
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-ucroman, es-noquoting]{babel}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumitem} % Provee macro \setlist
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage[toc, page]{appendix}
+
+
+%%%%%%%%%% Configuración de Fancyhdr - Inicio %%%%%%%%%%
+\pagestyle{fancy}
+\thispagestyle{fancy}
+\lhead{Trabajo Práctico 1 · Ingeniería de Software I}
+\rhead{Delgado · Lovisolo · Petaccio · Requeni · Vita}
+\renewcommand{\footrulewidth}{0.4pt}
+\cfoot{\thepage /\pageref{LastPage}}
+
+\fancypagestyle{caratula} {
+   \fancyhf{}
+   \cfoot{\thepage /\pageref{LastPage}}
+   \renewcommand{\headrulewidth}{0pt}
+   \renewcommand{\footrulewidth}{0pt}
+}
+%%%%%%%%%% Configuración de Fancyhdr - Fin %%%%%%%%%%
+
+
+%%%%%%%%%% Miscelánea - Inicio %%%%%%%%%%
+% Evita que el documento se estire verticalmente para ocupar el espacio vacío
+% en cada página.
+\raggedbottom
+
+% Deshabilita sangría en la primer línea de un párrafo.
+\setlength{\parindent}{0em}
+
+% Separación entre párrafos.
+\setlength{\parskip}{0.5em}
+
+% Separación entre elementos de listas.
+\setlist{itemsep=0.5em}
+
+% Asigna la traducción de la palabra 'Appendices'.
+\renewcommand{\appendixtocname}{Apéndices}
+\renewcommand{\appendixpagename}{Apéndices}
+%%%%%%%%%% Miscelánea - Fin %%%%%%%%%%
+
+
+%%%%%%%%%% Insertar diagrama - Inicio %%%%%%%%%%
+\newcommand{\diagrama}[1]{
+  \includegraphics[width=16cm]{#1}
+}
+%%%%%%%%%% Insertar diagrama - Fin %%%%%%%%%%
+
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Carátula                                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\thispagestyle{caratula}
+
+\begin{center}
+
+\includegraphics[height=2cm]{DC.png} 
+\hfill
+\includegraphics[height=2cm]{UBA.jpg} 
+
+\vspace{2cm}
+
+Departamento de Computación,\\
+Facultad de Ciencias Exactas y Naturales,\\
+Universidad de Buenos Aires
+
+\vspace{4cm}
+
+\begin{Huge}
+Trabajo Práctico 1
+\end{Huge}
+
+\vspace{0.5cm}
+
+\begin{Large}
+Ingeniería de Software I
+\end{Large}
+
+\vspace{1cm}
+
+Primer Cuatrimestre de 2014
+
+\vspace{4cm}
+
+\begin{tabular}{|c|c|c|}
+\hline
+Apellido y Nombre & LU & E-mail\\
+\hline
+Nahuel Delgado        & 601/11 & nahueldelgado@gmail.com\\
+Leandro Lovisolo      & 645/11 & leandro@leandro.me\\
+Lautaro José Petaccio & 443/11 & lausuper@gmail.com\\
+Gastón Requeni        & 400/11 & grequeni@hotmail.com\\
+Sebastián Vita        & 149/11 & sebastian\_vita@yahoo.com.ar\\
+\hline
+\end{tabular}
+
+\end{center}
+
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Índice                                                                    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\tableofcontents
+
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Introducción                                                              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Introducción}
+
+En este trabajo práctico aplicamos varias técnicas de ingeniería de requerimientos para modelar un hipotético sistema de administración de la red de ciclovías de una ciudad. Además, proporcionamos una lista de escenarios informales que ejemplifican situaciones representativas del funcionamiento esperado.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Modelo de Jackson                                                         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Modelo de Jackson}
+
+
+\subsection{Mundo}
+
+\begin{multicols}{2}
+  \begin{itemize}
+    \item Usuario retira bicicleta	
+    \item Usuario usa la bicicleta más de una hora
+    \item Usuario no consigue bicicleta
+    \item Usuario hurta una bicicleta	
+    \item Usuario tiene accidente en bicicleta
+    \item Usuarios salen de trabajar en una franja horaria reducida	
+    \item Usuario espera bicicleta
+    \item Usuario espera bicicleta por más de 40 minutos 
+    \item Usuario roba identidad a otro
+    \item Usuario penalizado retira bicicleta	
+    \item Usuario sin registrar retira bicicleta
+    \item Usuario retorna bicicleta tarde (más de 1hr) y se lo penaliza
+    \item Usuario va a buscar una bici a estación del centro
+    \item Usuario va a buscar una bici a estación periférica
+    \item Usuario retorna bicicleta en horario 
+    \item Camiones trasladan bicicletas
+    \item Camiones tardan en trasladar bicicletas
+    \item Camión lleva bicicletas a una estación
+    \item Camión retira bicicletas de una estación
+    \item Empresa de transporte recibe solicitud de transporte de bicis de estación A a B 
+    \item Sistema pierde conexión
+    \item Estación se queda sin bicicletas
+    \item Estacion se registra en el sis
+    \item Estacion pierde conex
+    \item Estación entrega una bicicleta 
+    \item Estación recibe una bicicleta 
+    \item Se cae la conexión de la estación
+  \end{itemize}
+\end{multicols}
+
+
+\subsection{Interfaz}
+
+\begin{multicols}{2}
+  \begin{itemize}
+    \item Usuario se registra en la pagina web
+    \item Usuario checkea disponibilidad de bicicletas
+    \item Usuario solicita reposición de bicicletas
+    \item Usuario se identifica en la estación	
+    \item Usuario pide retirar bicicleta al sistema
+    \item Usuario registra devolución de la bicicleta
+    \item Camiones informan su ubicación 
+    \item Camion informa si tiene lugar para cargar mas bicicletas
+    \item Camiones informan si estan transportando bicicletas o no
+    \item Estación informa al sistema que tiene una bicicleta menos 
+    \item Estación informa al sistema que tiene una bicicleta más
+    \item Estación solicita reposición de bicis   
+    \item Estación informa que un usuario tiene una bici en su poder
+    \item Estación informa que un usuario ya no tiene ninguna bici en su poder
+    \item Estación informa robo de una bici
+    \item Estación checkea en el sistema si un usuario existe
+    \item Estación checkea en el sistema si un usuario puede retirar una bicicleta
+    \item Página web informa al sistema que un usuario se registra
+    \item Página web solicita disponibilidad de bicis en una estación
+  \end{itemize}
+\end{multicols}
+
+
+\subsection{Sistema}
+
+\begin{multicols}{2}
+  \begin{itemize}
+    \item Sistema checkea que un usuario registrado no se vuelva a registrar
+    \item Sistema checkea si existen penalizaciones
+    \item Sistema checkea si ya se sacó una bici
+    \item Sistema checkea si pasó más de una hora al devolver la bici
+    \item Sistema registra usuario
+    \item Sistema registra una nueva estacion
+    \item Sistema registra nuevas bicicletas (si se compran mas bicis, se registran para que el sistema sepa que existen)
+    \item Sistema libera bicicleta
+    \item Sistema utiliza un algoritmo de encriptación seguro para las contraseñas de los usuarios
+    \item Sistema lleva registro de cantidad de bicis en cada estación 
+    \item Sistema lleva registro de todos los usuarios existentes y si tienen o no una bici en su poder
+    \item Sistema diferencia entre estaciones del centro y periféricas 
+    \item Sistema trata de que las estaciones del centro tengan más bicis que las periféricas a todo momento (si se desbalancea mucho, repone automáticamente)
+    \item Sistema le indica  a los camiones cuantas bicicletas deben quitar de una estación y a donde entregarlas.
+    \item Sistema calcula mediante un algoritmo que estación es la mas indicada para ceder bicicletas según la distancia entre las estaciones y la ubicación actual de los camiones
+    \item Sistema averigua donde se encuentran los camiones
+    \item Sistema averigua si un camion tiene lugar para cargar bicicletas
+    \item Sistema averigua si un camion esta transportando bicicletas o no
+  \end{itemize}
+\end{multicols}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Diagrama de Contexto                                                      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Diagrama de Contexto}
+
+\diagrama{diagrama-de-contexto.png}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Modelo de Objetivos                                                       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Modelo de Objetivos}
+
+\diagrama{modelo-de-objetivos.jpg}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Escenarios hipotéticos                                                    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Escenarios Hipotéticos}
+
+
+Los siguientes escenarios ilustran de manera informal situaciones representativas del funcionamiento esperado del sistema.
+
+
+\subsection{Escenario 1}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis neque eget suscipit faucibus. Curabitur nunc ligula, molestie quis velit molestie, convallis molestie tellus. Suspendisse malesuada, justo euismod varius commodo, dolor lectus tristique justo, at malesuada velit eros non tellus. Sed convallis dolor sit amet nisi iaculis, a pharetra justo tempus. Cras sit amet urna in metus mattis blandit. Quisque laoreet vitae dolor ut pharetra. Proin ut vulputate leo, vel suscipit lacus. Nunc ultrices ante ut sem faucibus, ac viverra enim faucibus. Morbi feugiat tempus enim, dapibus lobortis tortor fringilla a. Praesent sem nibh, dignissim ac dictum vitae, convallis mollis magna. Ut tincidunt ipsum mi, at venenatis quam viverra nec. Integer justo nisl, auctor nec vestibulum non, interdum a mauris.
+
+Etiam lacinia diam a ante sagittis cursus. Quisque in vestibulum purus. Duis eget vestibulum velit. Curabitur ornare mi a dapibus mattis. Vestibulum ac fermentum ipsum. Mauris pellentesque mattis risus, sit amet luctus mauris malesuada non. Sed vehicula pharetra neque, sagittis rhoncus est tempor in. Sed auctor consequat lectus ut congue. Vestibulum eget pharetra justo, consectetur porttitor tellus. Proin vel metus eu dolor ullamcorper ullamcorper. Sed nec nunc erat.
+
+
+\subsection{Escenario 2}
+
+Mauris vehicula sapien mauris, non lobortis lacus convallis sed. Donec sollicitudin ultrices dui. Nulla fermentum posuere odio, eget fermentum magna lacinia sit amet. Donec molestie tellus ac mi molestie, ac commodo massa laoreet. Nunc purus ante, consectetur et diam a, dapibus rutrum mi. Ut porttitor iaculis magna eget feugiat. Ut sit amet nulla aliquet, placerat odio vel, luctus libero. Etiam commodo egestas diam mollis laoreet. Fusce rutrum lectus ac augue sodales, eu tincidunt ligula varius. Pellentesque eget volutpat est. Aliquam sem purus, porta a dui a, rhoncus facilisis velit. Quisque at ullamcorper lectus. Ut in justo consectetur, scelerisque massa eu, faucibus ligula. Donec fermentum porta tellus, a venenatis quam varius quis. Nullam ac massa mattis, posuere neque at, egestas tellus.
+
+Proin sit amet nulla tempor, cursus mi sed, tincidunt turpis. Nulla fermentum, arcu vitae imperdiet condimentum, nibh nisl euismod nibh, et suscipit turpis neque ut metus. Fusce vitae magna sem. Nullam aliquet, ipsum eu commodo gravida, leo odio porta turpis, sit amet pellentesque tellus felis non sapien. Phasellus pretium, felis a tempor convallis, justo turpis feugiat nibh, ac ornare lorem leo quis turpis. Nulla ipsum felis, scelerisque in arcu vitae, lobortis venenatis velit. Nam quis iaculis mi.
+
+
+\subsection{Escenario 3}
+
+Ut ullamcorper dignissim enim. Curabitur rhoncus orci ante, vitae iaculis lorem aliquam eu. Donec lobortis, purus sit amet ultrices molestie, felis dolor ultrices turpis, eu eleifend arcu turpis sed sem. Aliquam fringilla iaculis feugiat. Fusce vitae rhoncus felis. Aenean pellentesque dignissim lectus at aliquam. Duis condimentum aliquam auctor. Praesent porta scelerisque massa vitae sagittis. Praesent erat urna, ullamcorper ac nisl id, volutpat facilisis lorem. Nunc placerat dui posuere, faucibus ante eget, volutpat neque.
+
+Vivamus neque nisl, congue non ornare non, pretium adipiscing nibh. Pellentesque rhoncus tincidunt commodo. Morbi nulla libero, egestas in congue eu, tempor nec leo. Donec at ornare ante. Duis vulputate pellentesque risus sed imperdiet. Aenean tempus id risus vitae consectetur. Curabitur consequat varius orci, id accumsan quam laoreet ut. Sed dui velit, semper ac posuere eu, consequat eget dolor. Integer ut diam pellentesque, tristique nisl eget, posuere elit. Etiam vestibulum arcu at lacus lobortis molestie. Suspendisse bibendum ante non dolor mollis, at euismod enim blandit. Nullam sagittis velit dignissim, pretium libero volutpat, adipiscing tortor
+
+
+\end{document}
