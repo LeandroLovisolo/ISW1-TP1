@@ -174,12 +174,18 @@ En este trabajo práctico aplicamos varias técnicas de ingeniería de requerimi
     \item Personal de empresa de transporte retira bicicletas de una estación
     \item Empresa de transporte recibe solicitud de transporte de bicis de estación A a B 
     \item Sistema pierde conexión
+    \item Estacion pierde conexión
     \item Estación se queda sin bicicletas
     \item Estacion se registra en el sis
-    \item Estacion pierde conex
     \item Personal de estación entrega una bicicleta 
-    \item Personal de estación recibe una bicicleta 
+    \item Personal de estación recibe una bicicleta
+    \item Personal de estación rechaza una petición de retirar bicicleta debido suspensión por infracciones
+    \item Personal de estación rechaza una petición de retirar bicicleta ya que el usuario ya tiene una bicicleta
+    \item Personal de estación rechaza una petición de retirar bicicleta debido a que el usuario no es válido
+    \item Personal de estación rechaza una petición de retirar una bicicleta ya que no hay stock
+    \item Usuario se identifica con el personal de una estación
     \item Se cae la conexión de la estación
+    \item Personal del gobierno de Mar Chiquita entrega nuevas bicicletas al personal de la empresa de transporte
   \end{itemize}
 \end{multicols}
 
@@ -188,25 +194,25 @@ En este trabajo práctico aplicamos varias técnicas de ingeniería de requerimi
 
 \begin{multicols}{2}
   \begin{itemize}
-    \item Usuario se registra en la pagina web
-    \item Usuario checkea disponibilidad de bicicletas
-    \item Usuario solicita reposición de bicicletas
-    \item Usuario se identifica con el personal de una estación
-    \item Usuario pide retirar bicicleta al sistema
-    \item Usuario registra devolución de la bicicleta
-    \item Personal de empresa de transporte informa su ubicación (No va)
-    \item Personal de empresa de transporte informa si tiene lugar para cargar mas bicicletas (No)
-    \item Personal de empresa de transporte informa si estan transportando bicicletas o no (No)
-    \item Personal de estación informa al sistema que tiene una bicicleta menos 
-    \item Personal de estación informa al sistema que tiene una bicicleta más
-    \item Personal de estación solicita reposición de bicis   
-    \item Personal de estación informa que un usuario tiene una bici en su poder
-    \item Personal de estación informa que un usuario ya no tiene ninguna bici en su poder
-    \item Personal de estación informa robo de una bici
-    \item Personal de estación checkea en el sistema si un usuario existe
-    \item Personal de estación checkea en el sistema si un usuario puede retirar una bicicleta
-    \item Página web informa al sistema que un usuario se registra
-    \item Página web solicita disponibilidad de bicis en una estación
+    \item Usuario se registra en el sistema
+    \item Usuario consulta disponibilidad de bicicletas
+    \item Usuario consulta su estado de penalización
+    \item Personal de estación informa al sistema el retiro de una bicicleta por parte de un usuario determinado
+    \item Personal de estación informa al sistema la devolución de una bicicleta por parte de un usuario determinado
+    \item Personal de estación solicita reposición de bicicletas
+    \item Personal de estación informa robo de una bici (?)
+    \item Personal de estación autentifica un usuario en el sistema
+    \item Personal de estación consulta con el sistema el retiro de una bicicleta por parte de un usuario determinado
+    \item Sistema informa al personal de la estación si la petición de retirar bicicleta de un usuario es aceptada/rechazada
+    \item Sistema informa al personal de la estación si la petición de autenticación de un usuario resulta correcta/incorrecta
+    \item Sistema informa al usuario el resultado del registro
+    \item Sistema informa al usuario el estado de penalización de este
+    \item Sistema informa al usuario la disponibilidad de bicicletas
+    \item Sistema envía ordenes de reposición de bicicletas al personal de la empresa de transporte
+    \item Personal del gobierno de Mar Chiquita se autentica en el sistema
+    \item Personal del gobierno de Mar Chiquita informa al sistema la disponibilidad de nuevas bicicletas
+    \item Personal del gobierno de Mar Chiquita informa al sistema que existe una nueva estación
+
   \end{itemize}
 \end{multicols}
 
@@ -215,24 +221,22 @@ En este trabajo práctico aplicamos varias técnicas de ingeniería de requerimi
 
 \begin{multicols}{2}
   \begin{itemize}
-    \item Sistema checkea que un usuario registrado no se vuelva a registrar
+    \item Sistema checkea que un usuario registrado no vuelva a registrarse
     \item Sistema checkea si existen penalizaciones
     \item Sistema checkea si ya se sacó una bici
     \item Sistema checkea si pasó más de una hora al devolver la bici
+    \item Sistema calcula la penalización de los usuarios infractores
     \item Sistema registra usuario
     \item Sistema registra una nueva estacion
-    \item Sistema registra nuevas bicicletas (si se compran mas bicis, se registran para que el sistema sepa que existen)
-    \item Sistema libera bicicleta
+    \item Sistema registra nuevas bicicletas agregadas por el personal del estado
+    \item Sistema libera bicicleta (?)
     \item Sistema utiliza un algoritmo de encriptación seguro para las contraseñas de los usuarios
     \item Sistema lleva registro de cantidad de bicis en cada estación 
     \item Sistema lleva registro de todos los usuarios existentes y si tienen o no una bici en su poder
     \item Sistema diferencia entre estaciones del centro y periféricas 
     \item Sistema trata de que las estaciones del centro tengan más bicis que las periféricas a todo momento (si se desbalancea mucho, repone automáticamente)
     \item Sistema le indica al personal de empresa de transporte cuantas bicicletas deben quitar de una estación y a donde entregarlas.
-    \item Sistema calcula mediante un algoritmo que estación es la mas indicada para ceder bicicletas según la distancia entre las estaciones y la ubicación actual de los camiones (No se sabe ubicación, no va)
-    \item Sistema averigua donde se encuentran los camiones (No va)
-    \item Sistema averigua si un camion tiene lugar para cargar bicicletas (No va)
-    \item Sistema averigua si un camion esta transportando bicicletas o no (No va)
+    \item Sistema calcula mediante un algoritmo que estación es la mas indicada para ceder bicicletas según la distancia entre las estaciones (?)
   \end{itemize}
 \end{multicols}
 
