@@ -156,7 +156,8 @@ En este trabajo práctico aplicamos varias técnicas de ingeniería de requerimi
     \item Usuario retira bicicleta	
     \item Usuario usa la bicicleta más de una hora
     \item Usuario no consigue bicicleta
-    \item Usuario hurta una bicicleta	
+    \item Usuario sufre el robo de una bicicleta
+    \item Usuario reporta al personal de la estación que su bicicleta fue robada	
     \item Usuario tiene accidente en bicicleta
     \item Usuarios salen de trabajar en una franja horaria reducida	
     \item Usuario espera bicicleta
@@ -196,10 +197,10 @@ En este trabajo práctico aplicamos varias técnicas de ingeniería de requerimi
     \item Usuario se registra en el sistema
     \item Usuario consulta disponibilidad de bicicletas
     \item Usuario consulta su estado de penalización
+    \item Personal de estación informa al sistema que una bicicleta fue robada
     \item Personal de estación informa al sistema el retiro de una bicicleta por parte de un usuario determinado
     \item Personal de estación informa al sistema la devolución de una bicicleta por parte de un usuario determinado
     \item Personal de estación solicita reposición de bicicletas
-    \item Personal de estación informa robo de una bici (?)
     \item Personal de estación autentifica un usuario en el sistema
     \item Personal de estación consulta con el sistema el retiro de una bicicleta por parte de un usuario determinado
     \item Sistema informa al personal de la estación si la petición de retirar bicicleta de un usuario es aceptada/rechazada
@@ -223,12 +224,12 @@ En este trabajo práctico aplicamos varias técnicas de ingeniería de requerimi
     \item Sistema checkea que un usuario registrado no vuelva a registrarse
     \item Sistema checkea si existen penalizaciones
     \item Sistema checkea si ya se sacó una bici
-    \item Sistema checkea si pasó más de una hora al devolver la bici
-    \item Sistema calcula la penalización de los usuarios infractores
+    \item Sistema penaliza usuarios por pérdia/robo de bicicleta
+    \item Sistema calcula la penalización de los usuarios infractores basado en el tiempo excedido del límite de 1h
     \item Sistema registra usuario
     \item Sistema registra una nueva estacion
     \item Sistema registra nuevas bicicletas agregadas por el personal del estado
-    \item Sistema libera bicicleta (?)
+    \item Sistema penaliza usuario por pérdida de bicicleta
     \item Sistema utiliza un algoritmo de encriptación seguro para las contraseñas de los usuarios
     \item Sistema lleva registro de cantidad de bicis en cada estación 
     \item Sistema lleva registro de todos los usuarios existentes y si tienen o no una bici en su poder
