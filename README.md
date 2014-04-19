@@ -1,7 +1,7 @@
 ISW1-TP1
 ========
 
-Ingeniería del Software I: Trabajo Práctico 1
+Ingeniería de Software I: Trabajo Práctico 1
 
 1° Cuatrimestre 2014
 
