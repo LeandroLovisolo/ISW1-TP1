@@ -153,8 +153,7 @@ En este trabajo práctico aplicamos varias técnicas de ingeniería de requerimi
 
 \diagramahorizontal{contexto}
 
-A continuación desarrollamos algunas de las interacciones más importantes.
-
+A continuación detallaremos alunos fenómenos.
 
 \subsection{Registra devolución y entrega de bicicleta}
 El registro de la devolución y entrega de la bicicleta implica el registro de DNI, ID de la bicicleta a devolver y hora devuelta.
@@ -163,6 +162,10 @@ El registro de la devolución y entrega de la bicicleta implica el registro de D
 \subsection{Informa nueva  estación}
 El informe de nueva estación implica el ingreso de los datos de la nueva estación y la distinción entre centro y periferia de estas.
 
+\subsection{Comunicación offline}
+Al caerse la conexión con el sistema en una estación, la comunicación relacionada a las devoluciones y entregas de bicicletas se realiza
+mediante una comunicación vía radio con otra estación que posea conexión.
+Asumimos que la estación a donde se comunicará la estación sin conexión realizará las mismas operaciones para entrega/retiro de bicicletas, actuando como un puente entre estaciones, por lo que consideramos su no inclusión en el diagrama de contexto.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Modelo de Objetivos                                                       %%
