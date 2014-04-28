@@ -59,10 +59,9 @@
 
 %%%%%%%%%% Insertar diagrama - Inicio %%%%%%%%%%
 \newcommand{\diagrama}[1]{
-  \includegraphics[width=16cm]{#1}
+  \includegraphics[type=png,ext=.png,read=.png,width=16cm]{#1}
 }
 %%%%%%%%%% Insertar diagrama - Fin %%%%%%%%%%
-
 
 \begin{document}
 
@@ -142,113 +141,13 @@ En este trabajo práctico aplicamos varias técnicas de ingeniería de requerimi
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Modelo de Jackson                                                         %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\section{Modelo de Jackson}
-
-
-\subsection{Mundo}
-
-\begin{multicols}{2}
-  \begin{itemize}
-    \item Usuario retira bicicleta	
-    \item Usuario usa la bicicleta más de una hora
-    \item Usuario no consigue bicicleta
-    \item Usuario sufre el robo de una bicicleta
-    \item Usuario reporta al personal de la estación que su bicicleta fue robada	
-    \item Usuario tiene accidente en bicicleta
-    \item Usuarios salen de trabajar en una franja horaria reducida	
-    \item Usuario espera bicicleta
-    \item Usuario espera bicicleta por más de 40 minutos 
-    \item Usuario roba identidad a otro
-    \item Usuario penalizado retira bicicleta	
-    \item Usuario sin registrar retira bicicleta
-    \item Usuario retorna bicicleta tarde (más de 1hr) y se lo penaliza
-    \item Usuario va a buscar una bici a estación del centro
-    \item Usuario va a buscar una bici a estación periférica
-    \item Usuario retorna bicicleta en horario 
-    \item Personal de empresa de transporte trasladan bicicletas
-    \item Personal de empresa de transporte tardan en trasladar bicicletas
-    \item Personal de empresa de transporte lleva bicicletas a una estación
-    \item Personal de empresa de transporte retira bicicletas de una estación
-    \item Empresa de transporte recibe solicitud de transporte de bicis de estación A a B 
-    \item Sistema pierde conexión
-    \item Estacion pierde conexión
-    \item Estación se queda sin bicicletas
-    \item Personal de estación entrega una bicicleta 
-    \item Personal de estación recibe una bicicleta
-    \item Personal de estación rechaza una petición de retirar bicicleta debido suspensión por infracciones
-    \item Personal de estación rechaza una petición de retirar bicicleta ya que el usuario ya tiene una bicicleta
-    \item Personal de estación rechaza una petición de retirar bicicleta debido a que el usuario no es válido
-    \item Personal de estación rechaza una petición de retirar una bicicleta ya que no hay stock
-    \item Usuario se identifica con el personal de una estación
-    \item Se cae la conexión de la estación
-    \item Personal del gobierno de Mar Chiquita entrega nuevas bicicletas al personal de la empresa de transporte
-  \end{itemize}
-\end{multicols}
-
-
-\subsection{Interfaz}
-
-\begin{multicols}{2}
-  \begin{itemize}
-    \item Usuario se registra en el sistema
-    \item Usuario consulta disponibilidad de bicicletas
-    \item Usuario consulta su estado de penalización
-    \item Personal de estación informa al sistema que una bicicleta fue robada
-    \item Personal de estación informa al sistema el retiro de una bicicleta por parte de un usuario determinado
-    \item Personal de estación informa al sistema la devolución de una bicicleta por parte de un usuario determinado
-    \item Personal de estación solicita reposición de bicicletas
-    \item Personal de estación autentifica un usuario en el sistema
-    \item Personal de estación consulta con el sistema el retiro de una bicicleta por parte de un usuario determinado
-    \item Sistema informa al personal de la estación si la petición de retirar bicicleta de un usuario es aceptada/rechazada
-    \item Sistema informa al personal de la estación si la petición de autenticación de un usuario resulta correcta/incorrecta
-    \item Sistema informa al usuario el resultado del registro
-    \item Sistema informa al usuario el estado de penalización de este
-    \item Sistema informa al usuario la disponibilidad de bicicletas
-    \item Sistema envía ordenes de reposición de bicicletas al personal de la empresa de transporte
-    \item Personal del gobierno de Mar Chiquita se autentica en el sistema
-    \item Personal del gobierno de Mar Chiquita informa al sistema la disponibilidad de nuevas bicicletas
-    \item Personal del gobierno de Mar Chiquita informa al sistema que existe una nueva estación
-
-  \end{itemize}
-\end{multicols}
-
-
-\subsection{Sistema}
-
-\begin{multicols}{2}
-  \begin{itemize}
-    \item Sistema checkea que un usuario registrado no vuelva a registrarse
-    \item Sistema checkea si existen penalizaciones
-    \item Sistema checkea si ya se sacó una bici
-    \item Sistema penaliza usuarios por pérdia/robo de bicicleta
-    \item Sistema calcula la penalización de los usuarios infractores basado en el tiempo excedido del límite de 1h
-    \item Sistema registra usuario
-    \item Sistema registra una nueva estacion
-    \item Sistema registra nuevas bicicletas agregadas por el personal del estado
-    \item Sistema penaliza usuario por pérdida de bicicleta
-    \item Sistema utiliza un algoritmo de encriptación seguro para las contraseñas de los usuarios
-    \item Sistema lleva registro de cantidad de bicis en cada estación 
-    \item Sistema lleva registro de todos los usuarios existentes y si tienen o no una bici en su poder
-    \item Sistema diferencia entre estaciones del centro y periféricas 
-    \item Sistema trata de que las estaciones del centro tengan más bicis que las periféricas a todo momento (si se desbalancea mucho, repone automáticamente)
-    \item Sistema le indica al personal de empresa de transporte cuantas bicicletas deben quitar de una estación y a donde entregarlas.
-    \item Sistema calcula mediante un algoritmo que estación es la mas indicada para ceder bicicletas según la distancia entre las estaciones (?)
-  \end{itemize}
-\end{multicols}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Diagrama de Contexto                                                      %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \section{Diagrama de Contexto}
 
-\diagrama{diagrama-de-contexto.png}
+\diagrama{diagrama-de-contexto}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -258,7 +157,86 @@ En este trabajo práctico aplicamos varias técnicas de ingeniería de requerimi
 
 \section{Modelo de Objetivos}
 
-\diagrama{images/LN_6.png}
+\subsection{(1.1)  Objetivos principales}
+\diagrama{objetivos-1.1}
+
+\subsection{(1.2)  Objetivos principales}
+\diagrama{objetivos-1.2}
+
+\subsection{(1.3)  Objetivos principales}
+\diagrama{objetivos-1.3}
+
+\subsection{(1.4)  Objetivos principales}
+\diagrama{objetivos-1.4}
+
+\subsection{(2)    Registro de usuarios por internet}
+\diagrama{objetivos-2}
+
+\subsection{(3)    Consulta de disponibilidad por internet}
+\diagrama{objetivos-3}
+
+\subsection{(4)    Consulta penalización por internet}
+\diagrama{objetivos-4}
+
+\subsection{(5.1)  Solicitud de bicicletas: hay stock, usuario habilitado}
+\diagrama{objetivos-5.1}
+
+\subsection{(5.2)  Solicitud de bicicletas: hay stock, usuario habilitado}
+\diagrama{objetivos-5.2}
+
+\subsection{(5.3)  Solicitud de bicicletas: hay stock, usuario habilitado}
+\diagrama{objetivos-5.3}
+
+\subsection{(6)    Solicitud de bicicletas: hay stock, usuario no habilitado}
+\diagrama{objetivos-6}
+
+\subsection{(7)    Solicitud de bicicletas: no hay stock}
+\diagrama{objetivos-7}
+
+\subsection{(8)    Devolución de bicicletas}
+\diagrama{objetivos-8}
+
+\subsection{(9)    Evitar robos de identidad}
+\diagrama{objetivos-9}
+
+\subsection{(10)   Penalizaciones}
+\diagrama{objetivos-10}
+
+\subsection{(11)   Penalizaciones: retención por más de una hora}
+\diagrama{objetivos-11}
+
+\subsection{(12)   Penalizaciones: bicicleta dañada}
+\diagrama{objetivos-12}
+
+\subsection{(13)   Penalizaciones: denuncia de robo}
+\diagrama{objetivos-13}
+
+\subsection{(14)   Penalizaciones: intercambio de bicicletas}
+\diagrama{objetivos-14}
+
+\subsection{(15)   Penalizaciones: pago de multas}
+\diagrama{objetivos-15}
+
+\subsection{(16)   Reabastecimiento: apertura}
+\diagrama{objetivos-16}
+
+\subsection{(17.1) Reabastecimiento: hora pico}
+\diagrama{objetivos-17.1}
+
+\subsection{(17.2) Reabastecimiento: hora pico}
+\diagrama{objetivos-17.2}
+
+\subsection{(18.1) Escalabilidad del software}
+\diagrama{objetivos-18.1}
+
+\subsection{(18.2) Escalabilidad del software}
+\diagrama{objetivos-18.2}
+
+\subsection{(19)   Baja de bicicletas}
+\diagrama{objetivos-19}
+
+\subsection{(20)   Localizaciones de bicicletas}
+\diagrama{objetivos-20}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
