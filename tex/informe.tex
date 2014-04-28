@@ -258,7 +258,7 @@ En este trabajo práctico aplicamos varias técnicas de ingeniería de requerimi
 
 \section{Modelo de Objetivos}
 
-\diagrama{modelo-de-objetivos.jpg}
+\diagrama{images/LN_6.png}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -272,25 +272,30 @@ En este trabajo práctico aplicamos varias técnicas de ingeniería de requerimi
 Los siguientes escenarios ilustran de manera informal situaciones representativas del funcionamiento esperado del sistema.
 
 
-\subsection{Escenario 1}
+\subsection{Escenario 1: Registro de usuario}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis neque eget suscipit faucibus. Curabitur nunc ligula, molestie quis velit molestie, convallis molestie tellus. Suspendisse malesuada, justo euismod varius commodo, dolor lectus tristique justo, at malesuada velit eros non tellus. Sed convallis dolor sit amet nisi iaculis, a pharetra justo tempus. Cras sit amet urna in metus mattis blandit. Quisque laoreet vitae dolor ut pharetra. Proin ut vulputate leo, vel suscipit lacus. Nunc ultrices ante ut sem faucibus, ac viverra enim faucibus. Morbi feugiat tempus enim, dapibus lobortis tortor fringilla a. Praesent sem nibh, dignissim ac dictum vitae, convallis mollis magna. Ut tincidunt ipsum mi, at venenatis quam viverra nec. Integer justo nisl, auctor nec vestibulum non, interdum a mauris.
-
-Etiam lacinia diam a ante sagittis cursus. Quisque in vestibulum purus. Duis eget vestibulum velit. Curabitur ornare mi a dapibus mattis. Vestibulum ac fermentum ipsum. Mauris pellentesque mattis risus, sit amet luctus mauris malesuada non. Sed vehicula pharetra neque, sagittis rhoncus est tempor in. Sed auctor consequat lectus ut congue. Vestibulum eget pharetra justo, consectetur porttitor tellus. Proin vel metus eu dolor ullamcorper ullamcorper. Sed nec nunc erat.
+Un habitante de Mar Chiquita desea comenzar a utilizar las bicicletas del sistema como su medio de transporte. Para conseguirlo ingresa a la página web en donde se encuentra el formulario de registro de usuarios, y procede a completarlo con su nombre completo, su número de DNI, su dirección de correo electrónico y una contraseña para proteger el acceso a sus datos de uso del sistema. Al envíar los datos solicitados, se le confirma que la registración fue exitosa. A partir de ese momento, este habitante ya es considerado un usuario del servicio.
 
 
-\subsection{Escenario 2}
+\subsection{Escenario 2: Usuario retira bicicleta, y más tarde la devuelve}
 
-Mauris vehicula sapien mauris, non lobortis lacus convallis sed. Donec sollicitudin ultrices dui. Nulla fermentum posuere odio, eget fermentum magna lacinia sit amet. Donec molestie tellus ac mi molestie, ac commodo massa laoreet. Nunc purus ante, consectetur et diam a, dapibus rutrum mi. Ut porttitor iaculis magna eget feugiat. Ut sit amet nulla aliquet, placerat odio vel, luctus libero. Etiam commodo egestas diam mollis laoreet. Fusce rutrum lectus ac augue sodales, eu tincidunt ligula varius. Pellentesque eget volutpat est. Aliquam sem purus, porta a dui a, rhoncus facilisis velit. Quisque at ullamcorper lectus. Ut in justo consectetur, scelerisque massa eu, faucibus ligula. Donec fermentum porta tellus, a venenatis quam varius quis. Nullam ac massa mattis, posuere neque at, egestas tellus.
+Un usuario registrado se dirige a una estación de la red de ciclovías y expresa su intención de retirar una bicicleta al empleado de la estación. Éste le solicita el DNI al usuario con el fin de verificar su identidad con el mismo y también para poder cargar correctamente los datos del retiro de la bicicleta en el sistema. Luego de la verificación, el empleado devuelve el DNI, y si el usuario no se encuentra penalizado, permite al usuario a tomar una bicicleta. A continuación ingresa la solicitud en el sistema utilizando el DNI del usuario y el ID de la bicicleta; el sistema registra el retiro con fecha y hora del momento.
 
-Proin sit amet nulla tempor, cursus mi sed, tincidunt turpis. Nulla fermentum, arcu vitae imperdiet condimentum, nibh nisl euismod nibh, et suscipit turpis neque ut metus. Fusce vitae magna sem. Nullam aliquet, ipsum eu commodo gravida, leo odio porta turpis, sit amet pellentesque tellus felis non sapien. Phasellus pretium, felis a tempor convallis, justo turpis feugiat nibh, ac ornare lorem leo quis turpis. Nulla ipsum felis, scelerisque in arcu vitae, lobortis venenatis velit. Nam quis iaculis mi.
+Luego el usuario ya puede comenzar a utilizar la bicicleta retirada. Se traslada hasta la próxima estación en su recorrido en menos de una hora, y expresa allí su intención de devolver la bicicleta. El empleado de esta otra estación le solicita el DNI al usuario para verificar su identidad y poder registrar la devolución en el sistema. Luego de la verificación, carga la devolución en la interfaz del software indicando número de DNI del usuario, ID de la bicicleta y estado de la misma (sana/rota) al momento de la devolución. El sistema registra la devolución con fecha y hora, y el usuario se retira.
 
 
-\subsection{Escenario 3}
+\subsection{Escenario 3: Usuario intenta realizar el retiro/devolución en una estación offline}
 
-Ut ullamcorper dignissim enim. Curabitur rhoncus orci ante, vitae iaculis lorem aliquam eu. Donec lobortis, purus sit amet ultrices molestie, felis dolor ultrices turpis, eu eleifend arcu turpis sed sem. Aliquam fringilla iaculis feugiat. Fusce vitae rhoncus felis. Aenean pellentesque dignissim lectus at aliquam. Duis condimentum aliquam auctor. Praesent porta scelerisque massa vitae sagittis. Praesent erat urna, ullamcorper ac nisl id, volutpat facilisis lorem. Nunc placerat dui posuere, faucibus ante eget, volutpat neque.
+Un usuario se dirige a una estación para poder retirar/devolver una bicicleta, pero la estación se encuentra sin servicio de internet. Luego de realizar la verificación de la identidad del usuario mediante su DNI, al momento de registrar la operación en el sistema de software, en lugar de eso el empleado de la estación se comunica por handy con otra estación que sí posee conectividad a internet, y delega el registro de la operación a su compañero de la segunda estación. Si el usuario pretendía devolver una bicicleta, la misma es aceptada por el empleado de la estación. Y en el caso de que haya querido retirar una bicicleta, si hay stock, se le ofrece una de las disponibles en la estación.
 
-Vivamus neque nisl, congue non ornare non, pretium adipiscing nibh. Pellentesque rhoncus tincidunt commodo. Morbi nulla libero, egestas in congue eu, tempor nec leo. Donec at ornare ante. Duis vulputate pellentesque risus sed imperdiet. Aenean tempus id risus vitae consectetur. Curabitur consequat varius orci, id accumsan quam laoreet ut. Sed dui velit, semper ac posuere eu, consequat eget dolor. Integer ut diam pellentesque, tristique nisl eget, posuere elit. Etiam vestibulum arcu at lacus lobortis molestie. Suspendisse bibendum ante non dolor mollis, at euismod enim blandit. Nullam sagittis velit dignissim, pretium libero volutpat, adipiscing tortor
+
+\subsection{Escenario 3: Usuario devuelve bicicleta después de una hora de retirarla}
+
+Un usuario se dirige a una estación de bicicletas para devolver la bicicleta que tiene en su poder, pero transcurrió más de una hora desde que la retiró (el tiempo máximo permitido de retención de una bicicleta).
+
+El proceso de devolución transcurre por su curso normal, pero una vez que el empleado de la estación carga la devolución en la interfaz del software, el sistema marca al usuario como penalizado y le envía un mail notificándole el hecho. Mientras el usuario esté penalizado, no podrá retirar bicicletas. Asímismo se le ofrece pagar una multa para normalizar su situación.
+
+Luego de recibir la bicicleta del usuario, éste se retira de la estación.
 
 
 \end{document}
